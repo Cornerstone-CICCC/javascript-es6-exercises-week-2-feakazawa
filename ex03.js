@@ -8,21 +8,17 @@ Create a function named numberOfVowels that will receive a string and return the
 */
 
 const numberOfVowels = function (data) {
-  count = 0;
-  const splitData = data.split("");
-  splitData.forEach((vowel) => {
-    if (
-      vowel === "a" ||
-      vowel === "e" ||
-      vowel === "i" ||
-      vowel === "o" ||
-      vowel === "u"
-    ) {
-      count++;
-    }
-  });
-
-  return count;
+  const splitWord = data.split("");
+  const vowels = splitWord.filter(
+    (letter) =>
+      letter === "a" ||
+      letter === "e" ||
+      letter === "i" ||
+      letter === "o" ||
+      letter === "u",
+  );
+  const sum = vowels.reduce((total) => total + 1, 0);
+  return sum;
 };
 
 console.log(numberOfVowels("orange")); // 3
