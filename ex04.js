@@ -11,12 +11,12 @@ const instructorWithLongestName = function (instructors) {
   let lenLargestName = instructors[0].name.length;
   let index = 0;
 
-  for (let i = 0; i < instructors.length; i++) {
-    if (instructors[i].name.length > lenLargestName) {
-      lenLargestName = instructors[i].name.length;
+  instructors.forEach((instructor, i) => {
+    if (instructor.name.length > lenLargestName) {
+      lenLargestName = instructor.name.length;
       index = i;
     }
-  }
+  });
   return instructors[index];
 };
 
