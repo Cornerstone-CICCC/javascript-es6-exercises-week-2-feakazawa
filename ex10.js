@@ -1,27 +1,40 @@
 /*In this exercise, we will be printing multiplication tables to the console.
 
 Multiplication Table
-We will be given a number as our input data. This number is the highest value of our multiplication table. Our job is to generate a multiplication table for the values from 1 to the provided number.
+We will be given a number as our input data. This number is the highest value of our multiplication table. 
+Our job is to generate a multiplication table for the values from 1 to the provided number.
 
 Instruction
-Create a function named multiplicationTable that receives a number maxValue as input and creates a square multiplication table where maxValue is the largest value in the table.
+Create a function named multiplicationTable that receives a number maxValue as input and creates a square multiplication 
+table where maxValue is the largest value in the table.
 */
 
+function createLine(num, max) {
+  let line = "";
+  for (let i = 1; i <= max; i++) {
+    line = line + " " + String(i * num);
+  }
+  return line;
+}
+
 const multiplicationTable = function (maxValue) {
-  // Your code here
+  for (let i = 1; i <= maxValue; i++) {
+    let tableLine = createLine(i, maxValue);
+    console.log(tableLine);
+  }
 };
 
-console.log(multiplicationTable(1));
+multiplicationTable(1);
 // 1
 
-console.log(multiplicationTable(5));
+multiplicationTable(5);
 // 1 2 3 4 5
 // 2 4 6 8 10
 // 3 6 9 12 15
 // 4 8 12 16 20
 // 5 10 15 20 25
 
-console.log(multiplicationTable(10));
+multiplicationTable(10);
 // 1 2 3 4 5 6 7 8 9 10
 // 2 4 6 8 10 12 14 16 18 20
 // 3 6 9 12 15 18 21 24 27 30
