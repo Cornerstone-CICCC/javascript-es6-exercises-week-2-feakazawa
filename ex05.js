@@ -24,16 +24,13 @@ Use some sort of looping. Do Not use String.prototype.replace
 */
 
 const urlEncode = function (text) {
-  const newText = text.trim();
-  let result = newText[0];
+  const textSplit = text.split(" ");
 
-  for (let i = 1; i < newText.length; i++) {
-    newText[i] === " "
-      ? (result = result + "%20")
-      : (result = result + newText[i]);
-  }
+  // remove all blank spaces in the beggining and in the end
+  const filteredText = textSplit.filter((item) => item != "");
 
-  return result;
+  const finalText = filteredText.join("%20");
+  return finalText;
 };
 
 console.log(urlEncode("cornerstone college")); //cornerstone%20college
