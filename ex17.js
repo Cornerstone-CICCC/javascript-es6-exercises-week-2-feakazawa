@@ -33,12 +33,12 @@ const urlDecode = function (text) {
   if (text.indexOf("&") < 0) {
     idx = text.indexOf("=");
     splitText = text.split("=");
-    result[text.slice(0, idx)] = text.slice(idx + 1);
+    result[text.slice(0, idx)] = text.slice(idx + 1); // Feedback: decode %20 in both the key and the value, even for a single pair.
   } else {
     splitText = text.split("&");
     splitText.forEach((item) => {
       idx = item.indexOf("=");
-      result[item.slice(0, idx)] = replaceBySpace(item.slice(idx + 1));
+      result[item.slice(0, idx)] = replaceBySpace(item.slice(idx + 1)); // Feedback: also apply replaceBySpace to the key: result[replaceBySpace(item.slice(0, idx))] = ...
     });
   }
 

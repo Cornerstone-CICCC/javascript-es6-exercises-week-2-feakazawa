@@ -12,7 +12,7 @@ table where maxValue is the largest value in the table.
 function createLine(num, max) {
   let line = "";
   for (let i = 1; i <= max; i++) {
-    line = line + " " + String(i * num);
+    line = line + " " + String(i * num); // Feedback: build rows without a leading space; expected rows start with the first number.
   }
   return line;
 }
@@ -20,7 +20,7 @@ function createLine(num, max) {
 const multiplicationTable = function (maxValue) {
   for (let i = 1; i <= maxValue; i++) {
     let tableLine = createLine(i, maxValue);
-    console.log(tableLine);
+    console.log(tableLine); // Feedback: collect rows and return one string joined with "\n" instead of logging inside the function.
   }
 };
 

@@ -35,7 +35,7 @@ const whereCanIPark = function (spots, vehicle) {
       for (let row = 0; row < spots.length; row++) {
         for (let col = 0; col < spots.length; col++) {
           if (spots[row][col] === "R") {
-            return `[${col}, ${row}]`;
+            return `[${col}, ${row}]`; // Feedback: return the coordinates as an array, e.g. [col, row], not a string.
           }
         }
       }
@@ -46,7 +46,7 @@ const whereCanIPark = function (spots, vehicle) {
       for (let row = 0; row < spots.length; row++) {
         for (let col = 0; col < spots.length; col++) {
           if (spots[row][col] === "R" || spots[row][col] === "S") {
-            return `[${col}, ${row}]`;
+            return `[${col}, ${row}]`; // Feedback: return [col, row] so the result is an array, not formatted text.
           }
         }
       }
@@ -61,7 +61,7 @@ const whereCanIPark = function (spots, vehicle) {
             spots[row][col] === "S" ||
             spots[row][col] === "M"
           ) {
-            return `[${col}, ${row}]`;
+            return `[${col}, ${row}]`; // Feedback: return [col, row] here; template literals create a string.
           }
         }
       }

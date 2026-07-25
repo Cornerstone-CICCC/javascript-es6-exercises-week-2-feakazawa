@@ -58,9 +58,9 @@ function generateOutput(arr, limit) {
 
   for (let i = 0; i < limit; i++) {
     arr.forEach((word) => {
-      output.push(nthChar(word, i));
+      output.push(nthChar(word, i)); // Feedback: skip undefined characters from short rows before adding them to the output.
     });
-    output.push(" ");
+    output.push(" "); // Feedback: do not leave a trailing space after the final encoded group; join complete groups with " ".
   }
   finalOutput += output.join("");
   return finalOutput;

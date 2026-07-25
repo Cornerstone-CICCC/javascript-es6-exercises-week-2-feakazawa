@@ -26,7 +26,7 @@ const checkAir = function (samples, threshold) {
     }
   });
 
-  return countDirty / samples.length > threshold ? "Polluted" : "Clean";
+  return countDirty / samples.length > threshold ? "Polluted" : "Clean"; // Feedback: the air is polluted when the dirty ratio is >= threshold.
 };
 
 console.log(
